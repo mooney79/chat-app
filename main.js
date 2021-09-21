@@ -31,7 +31,7 @@
 
 
 // PULL LIST OF MESSAGES ON PAGE LOAD
-    fetch('http://tiny-taco-server.herokuapp.com/tacoboutit/')
+    fetch('https://tiny-taco-server.herokuapp.com/tacoboutit/')
         .then(response => response.json())
         .then(data => data.forEach(createElement)
         );
@@ -49,7 +49,7 @@
             text: outgoing,
         }
          
-        fetch('http://tiny-taco-server.herokuapp.com/tacoboutit/', {
+        fetch('https://tiny-taco-server.herokuapp.com/tacoboutit/', {
             method: 'POST',
             headers: {
              'Content-Type': 'application/json',
@@ -69,7 +69,7 @@
         createElement(sentPacket);
      }
 
-    const tacoboutit = 'http://tiny-taco-server.herokuapp.com/tacoboutit/';
+    const tacoboutit = 'https://tiny-taco-server.herokuapp.com/tacoboutit/';
     
     function deleteMessage(target){
          let deleteKey = tacoboutit + target;
