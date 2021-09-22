@@ -31,6 +31,11 @@
     content:'\f406';
     font-family: "FontAwesome"
 }
+
+.edit-button {
+    
+    font-family: "FontAwesome";
+}
 /* .chat-bubble::after {
     content: '';
 	position: absolute;
@@ -55,6 +60,8 @@
 
 .text-field{
     clear: both;
+    position: sticky;
+    bottom: 0%;
 
 }
 
