@@ -27,15 +27,15 @@
     top: -10%;
 }
 
-.chat-name::before{
+/* .chat-name::before{
     content:'\f406';
     font-family: "FontAwesome"
-}
+} */
 
-.edit-button {
+/* .edit-button {
     
     font-family: "FontAwesome";
-}
+} */
 /* .chat-bubble::after {
     content: '';
 	position: absolute;
@@ -66,11 +66,18 @@
 }
 
 h1{
+    position: absolute;
+    top: 0;
     font-size: 40px;
-    width: 100%
+    width: 100%;
 }
  
 p{
     width: 100%;
     font-size: 16px;
+}
+
+section{
+    width: 100vw;
+    border: solid 1pt black
 }
