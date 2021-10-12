@@ -1,11 +1,5 @@
 /*
 KNOWN ISSUES LIST --
---If I use "sentPacket" object in LoadMessage() to create a visual representation of the message being posted, it
-lacks an ID, so when the fetchData function runs, that message will be duplicated until the page is refreshed.
-I tried to get around this by calling fetchData at the end of loadMessage, but it doesn't appear to work or
-maybe lags long enough to be REALLY noticable.
---If I try to create my own IDs in LoadMessage to get around the above issue, Tiny Taco Server is unable to find
-my IDs and thus those messages are stuck forever (or until server is cleaned).
 --Rework the CSS, which got extensively broken in my refactor.
 */
 
@@ -64,8 +58,7 @@ my IDs and thus those messages are stuck forever (or until server is cleaned).
             data.sort((first, second) => {
                 return first.timestamp - second.timestamp
             })
-            data.forEach(createElement)
-            
+            data.forEach(createElement)            
         });
     }
 
@@ -78,9 +71,9 @@ my IDs and thus those messages are stuck forever (or until server is cleaned).
             method: 'DELETE',    
         })
         .then (response => {
-        if (!response.ok) {
-            throw new Error('Oops! Something went wrong')
-        }
+            if (!response.ok) {
+                throw new Error('Oops! Something went wrong')
+            }
         console.log ('Record deleted');
         })
         $targetDiv.remove();
@@ -138,11 +131,12 @@ my IDs and thus those messages are stuck forever (or until server is cleaned).
             }
             return response.json();
         })
-        .then(data => console.log(data))
+        .then(data => createElement(data) )
+        // .then(update => {fetchData();console.log('I ran!')})
         .catch(error=> console.log('Error: ', error)) // catches errors if detected
         // .finally(() => console.log(`API's are awesome!`)); //Always fires
         $textField.value = '';
-        fetchData();
+        // fetchData();
     }
 
     const $textField = document.querySelector(".text-area");
