@@ -1,13 +1,8 @@
-/*
-KNOWN ISSUES LIST --
---Rework the CSS, which got extensively broken in my refactor.
-*/
-
 (function(){
     'use strict';
 
     const tacoboutit = 'https://tiny-taco-server.herokuapp.com/tacoboutit/';
-    const sender = 'Sam' //prompt('Please enter your name: '); disabled while I'm refreshing constantly.
+    const sender = prompt('Please enter your name: ');
 
     function createElement(obj) {
         const name = obj.sender;
@@ -58,7 +53,7 @@ KNOWN ISSUES LIST --
         .then(response => response.json())
         .then(data => {
             data.sort((first, second) => {
-                return first.timestamp - second.timestamp
+                (first.timestamp > second.timestamp) ? 1 : -1                
             })
             data.forEach(createElement)            
         });
@@ -143,7 +138,9 @@ KNOWN ISSUES LIST --
 
     const $textField = document.querySelector(".text-area");
     const $submit = document.querySelector(".submit");
-    $submit.addEventListener("submit", loadMessage);
+    $submit.addEventListener("click", loadMessage);
+    // const $msgForm = document.querySelector(".msg-form");
+    // $msgForm.addEventListener("submit", loadMessage);
 
     fetchData();
 

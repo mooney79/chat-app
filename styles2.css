@@ -5,6 +5,7 @@
     border: 1px solid red;
     background-color: rgba(255,0,0,0.15);
     margin-bottom: 4px;
+    margin-left: 10%;
 }
 
 .chat-bubble p {
@@ -34,6 +35,7 @@ form{
     /* border: solid green 3px; */
     display: flex;
     align-items: space-between;
+    margin-left: 10%;
 }
 
 #text-field{
