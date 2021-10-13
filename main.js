@@ -7,7 +7,7 @@ KNOWN ISSUES LIST --
     'use strict';
 
     const tacoboutit = 'https://tiny-taco-server.herokuapp.com/tacoboutit/';
-    const sender = prompt('Please enter your name: ');
+    const sender = 'Sam' //prompt('Please enter your name: '); disabled while I'm refreshing constantly.
 
     function createElement(obj) {
         const name = obj.sender;
@@ -19,13 +19,15 @@ KNOWN ISSUES LIST --
             if (!$idChecker) {
                 const htmlStr = 
                 `<section class="chat-bubble" id="${id}"> 
-                    <div class="profile"> 
-                        <i class="fas fa-user"></i>
+                    <div class="profile">                         
                         <h3 class="chat-name" id="${id}chn">
+                        <i class="fas fa-user"></i>
                         ${name} 
-                        </h3> 
-                        <button class="edit-button" id="${id}edt"><i class="far fa-edit"></i></button> 
-                        <button class="delete-button" id="${id}del">X</button> 
+                        </h3>
+                        <div clas="button-div> 
+                            <button class="edit-button" id="${id}edt"><i class="far fa-edit"></i></button> 
+                            <button class="delete-button" id="${id}del">X</button> 
+                        </div>
                     </div> 
                     <p id="${id}msg">${message}</p> 
                 </section>`;        
@@ -141,7 +143,7 @@ KNOWN ISSUES LIST --
 
     const $textField = document.querySelector(".text-area");
     const $submit = document.querySelector(".submit");
-    $submit.addEventListener("click", loadMessage);
+    $submit.addEventListener("submit", loadMessage);
 
     fetchData();
 
