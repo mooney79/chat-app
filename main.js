@@ -19,7 +19,7 @@
                         <i class="fas fa-user"></i>
                         ${name} 
                         </h3>
-                        <div clas="button-div> 
+                        <div class="button-div"> 
                             <button class="edit-button" id="${id}edt"><i class="far fa-edit"></i></button> 
                             <button class="delete-button" id="${id}del">X</button> 
                         </div>

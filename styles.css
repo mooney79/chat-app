@@ -8,10 +8,12 @@
     width: 40%;
     min-height: 50px;
     clear: both;
-    position: relative;
+    /* position: relative; */
     border-radius: 50px;
     text-align: center;
     padding-top: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .chat-name{
@@ -20,11 +22,15 @@
     border: solid black 2px;
     font-weight: bold;
     width: auto;
-    position: absolute; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    /* position: absolute;  */
     /* top: 0%;
     left: 0%; 
     padding-bottom: 16px;*/
-    top: -10%;
+    /* top: -10%; */
 }
 
 /* .chat-name::before{
@@ -47,16 +53,16 @@
     border-top-color: transparent;
     border-bottom-color: transparent;
 } */
-
+/* 
 .chat-bubble:nth-child(2n){
     float: right;
     /* text-align: left; */
-}
+/* } */
 
 .chat-name:nth-child(2n){
     float: left;
     text-align: right;
-}
+ } 
 
 .text-field{
     clear: both;
@@ -81,3 +87,42 @@ section{
     width: 100vw;
     border: solid 1pt black
 }
+
+.profile{
+    display: flex;
+    justify-content: top;
+    align-content: space-between;
+}
+
+.fa-user{
+    font-family: "FontAwesome";
+    font-size: 48pt;
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    align-self: top;
+    max-height: 35px;
+}
+/*  The new tag structure -- 
+<section class="chat-bubble" id="${id}"> 
+    <div class="profile"> 
+        <i class="fas fa-user"></i>
+        <h3 class="chat-name" id="${id}chn">
+            ${name} 
+        </h3> 
+        <button class="edit-button" id="${id}edt"><i class="far fa-edit"></i></button> 
+        <button class="delete-button" id="${id}del">X</button> 
+    </div> 
+    <p id="${id}msg">${message}</p> 
+</section>
+
+So...
+Profile is flex-row
+chat-bubble is flex-column
+
+*/
